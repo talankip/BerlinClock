@@ -9,7 +9,7 @@ import com.cds.katas.berlinclock.service.BerlinClockService;
 import com.cds.katas.berlinclock.service.BerlinClockServiceImpl;
 
 public class BerlinClockServiceTest {
-	
+
 	private BerlinClockService service;
 
 	@Before
@@ -18,21 +18,39 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testGetSingleMinuteRow() {
+	public void testconvertDigitalMinutesToBerlinSigleMinutesForAllOff() {
 		assertEquals("OOOO", service.convertDigitalMinutesToBerlinSigleMinutes("00"));
-		assertEquals("YYYY", service.convertDigitalMinutesToBerlinSigleMinutes("59"));
-		assertEquals("YOOO", service.convertDigitalMinutesToBerlinSigleMinutes("41"));
-		assertEquals("YYOO", service.convertDigitalMinutesToBerlinSigleMinutes("32"));
-		assertEquals("YYYO", service.convertDigitalMinutesToBerlinSigleMinutes("23"));
-		assertEquals("YYYY", service.convertDigitalMinutesToBerlinSigleMinutes("34"));
 		assertEquals("OOOO", service.convertDigitalMinutesToBerlinSigleMinutes("35"));
-		
-		
+	}
+
+	@Test
+	public void testconvertDigitalMinutesToBerlinSigleMinutesForAllYellow() {
+		assertEquals("YYYY", service.convertDigitalMinutesToBerlinSigleMinutes("59"));
+		assertEquals("YYYY", service.convertDigitalMinutesToBerlinSigleMinutes("34"));
+	}
+
+	@Test
+	public void testconvertDigitalMinutesToBerlinSigleMinutesForOneYellow() {
+		assertEquals("YOOO", service.convertDigitalMinutesToBerlinSigleMinutes("41"));
+	}
+
+	@Test
+	public void testconvertDigitalMinutesToBerlinSigleMinutesForTwoYellows() {
+		assertEquals("YYOO", service.convertDigitalMinutesToBerlinSigleMinutes("32"));
+	}
+
+	@Test
+	public void testconvertDigitalMinutesToBerlinSigleMinutesForThreeYellows() {
+		assertEquals("YYYO", service.convertDigitalMinutesToBerlinSigleMinutes("23"));
+	}
+
+	@Test
+	public void testconvertDigitalMinutesToBerlinSigleMinutesForAllInvalids() {
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinSigleMinutes("ab"));
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinSigleMinutes("60"));
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinSigleMinutes("61"));
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinSigleMinutes(""));
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinSigleMinutes(null));
 	}
-	
+
 }
