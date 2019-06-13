@@ -99,4 +99,31 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 			return INVALID_STRING;
 		}
 	}
+
+	public String ConvertDIgitalHoursToBerlinFiveHours(String hours) {
+		try {
+			if (null != hours && !EMPTY_STRING.equalsIgnoreCase(hours.trim())) {
+				int hour = Integer.valueOf(hours);
+				if (hour >= 24) {
+					return INVALID_STRING;
+				}
+				int quotient = Integer.divideUnsigned(hour, 5);
+				String result = "OOOO";
+				if (1 == quotient) {
+					result = "ROOO";
+				} else if (2 == quotient) {
+					result = "RROO";
+				} else if (3 == quotient) {
+					result = "RRRO";
+				} else if (4 == quotient) {
+					result = "RRRR";
+				} 
+				return result;
+			} else {
+				return INVALID_STRING;
+			}
+		} catch (Exception e) {
+			return INVALID_STRING;
+		}
+	}
 }

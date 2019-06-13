@@ -222,4 +222,58 @@ public class BerlinClockServiceTest {
 		assertEquals("XXXX", service.ConvertDIgitalHoursToBerlinSingleHours(""));
 		assertEquals("XXXX", service.ConvertDIgitalHoursToBerlinSingleHours(null));
 	}
+	
+	@Test
+	public void testConvertDIgitalHoursToBerlinFiveHoursAllOffs() {
+		assertEquals("OOOO", service.ConvertDIgitalHoursToBerlinFiveHours("00"));
+		assertEquals("OOOO", service.ConvertDIgitalHoursToBerlinFiveHours("01"));
+		assertEquals("OOOO", service.ConvertDIgitalHoursToBerlinFiveHours("02"));
+		assertEquals("OOOO", service.ConvertDIgitalHoursToBerlinFiveHours("03"));
+		assertEquals("OOOO", service.ConvertDIgitalHoursToBerlinFiveHours("04"));
+	}
+	
+	@Test
+	public void testConvertDIgitalHoursToBerlinFiveHoursOneRed() {
+		assertEquals("ROOO", service.ConvertDIgitalHoursToBerlinFiveHours("05"));
+		assertEquals("ROOO", service.ConvertDIgitalHoursToBerlinFiveHours("06"));
+		assertEquals("ROOO", service.ConvertDIgitalHoursToBerlinFiveHours("07"));
+		assertEquals("ROOO", service.ConvertDIgitalHoursToBerlinFiveHours("08"));
+		assertEquals("ROOO", service.ConvertDIgitalHoursToBerlinFiveHours("09"));
+	}
+	
+	@Test
+	public void testConvertDIgitalHoursToBerlinFiveHoursTwoReds() {
+		assertEquals("RROO", service.ConvertDIgitalHoursToBerlinFiveHours("10"));
+		assertEquals("RROO", service.ConvertDIgitalHoursToBerlinFiveHours("11"));
+		assertEquals("RROO", service.ConvertDIgitalHoursToBerlinFiveHours("12"));
+		assertEquals("RROO", service.ConvertDIgitalHoursToBerlinFiveHours("13"));
+		assertEquals("RROO", service.ConvertDIgitalHoursToBerlinFiveHours("14"));
+	}
+	
+	@Test
+	public void testConvertDIgitalHoursToBerlinFiveHoursThreeReds() {
+		assertEquals("RRRO", service.ConvertDIgitalHoursToBerlinFiveHours("15"));
+		assertEquals("RRRO", service.ConvertDIgitalHoursToBerlinFiveHours("16"));
+		assertEquals("RRRO", service.ConvertDIgitalHoursToBerlinFiveHours("17"));
+		assertEquals("RRRO", service.ConvertDIgitalHoursToBerlinFiveHours("18"));
+		assertEquals("RRRO", service.ConvertDIgitalHoursToBerlinFiveHours("19"));
+	}
+	
+	@Test
+	public void testConvertDIgitalHoursToBerlinFiveHoursFourReds() {
+		assertEquals("RRRR", service.ConvertDIgitalHoursToBerlinFiveHours("20"));
+		assertEquals("RRRR", service.ConvertDIgitalHoursToBerlinFiveHours("21"));
+		assertEquals("RRRR", service.ConvertDIgitalHoursToBerlinFiveHours("22"));
+		assertEquals("RRRR", service.ConvertDIgitalHoursToBerlinFiveHours("23"));
+	}
+	
+	@Test
+	public void testConvertDIgitalHoursToBerlinFiveHoursInvalids() {
+		assertEquals("XXXX", service.ConvertDIgitalHoursToBerlinFiveHours("24"));
+		assertEquals("XXXX", service.ConvertDIgitalHoursToBerlinFiveHours("25"));
+		assertEquals("XXXX", service.ConvertDIgitalHoursToBerlinFiveHours("sfsd"));
+		assertEquals("XXXX", service.ConvertDIgitalHoursToBerlinFiveHours(""));
+		assertEquals("XXXX", service.ConvertDIgitalHoursToBerlinFiveHours(null));
+	}
+	
 }
