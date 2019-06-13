@@ -6,10 +6,12 @@ public interface BerlinClockService {
 
 	public String convertDigitalMinutesToBerlinFiveMinutes(String minutes);
 
-	public String ConvertDIgitalHoursToBerlinSingleHours(String hours);
+	public String convertDIgitalHoursToBerlinSingleHours(String hours);
 
-	public String ConvertDIgitalHoursToBerlinFiveHours(String hours);
+	public String convertDIgitalHoursToBerlinFiveHours(String hours);
 
-	public String ConvertDIgitalSecondsToBerlinSeconds(String seconds);
+	public String convertDIgitalSecondsToBerlinSeconds(String seconds);
+
+	public String convertDigitalTimeToBerlinTime(String time);
 
 }

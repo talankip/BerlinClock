@@ -73,7 +73,7 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 		}
 	}
 
-	public String ConvertDIgitalHoursToBerlinSingleHours(String hours) {
+	public String convertDIgitalHoursToBerlinSingleHours(String hours) {
 		try {
 			if (null != hours && !EMPTY_STRING.equalsIgnoreCase(hours.trim())) {
 				int hour = Integer.valueOf(hours);
@@ -100,7 +100,7 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 		}
 	}
 
-	public String ConvertDIgitalHoursToBerlinFiveHours(String hours) {
+	public String convertDIgitalHoursToBerlinFiveHours(String hours) {
 		try {
 			if (null != hours && !EMPTY_STRING.equalsIgnoreCase(hours.trim())) {
 				int hour = Integer.valueOf(hours);
@@ -127,7 +127,7 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 		}
 	}
 
-	public String ConvertDIgitalSecondsToBerlinSeconds(String seconds) {
+	public String convertDIgitalSecondsToBerlinSeconds(String seconds) {
 		try {
 			if (null != seconds && !EMPTY_STRING.equalsIgnoreCase(seconds.trim())) {
 				int second = Integer.valueOf(seconds);
@@ -146,5 +146,39 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 		} catch (Exception e) {
 			return INVALID_STRING;
 		}
+	}
+
+	public String convertDigitalTimeToBerlinTime(String time) {
+		// 1. validate the string
+		// 2. get the seconds
+		// 3. get the five hours
+		// 4. get the single hours
+		// 5. get the five minutes
+		// 6. get the single minutes
+
+		String result = INVALID_STRING;
+		if (!valid(time)) {
+			return INVALID_STRING;
+		}
+		String hours = time.substring(0, 2);
+		String minutes = time.substring(3, 5);
+		String seconds = time.substring(6, 8);
+
+		result = convertDIgitalSecondsToBerlinSeconds(seconds) + convertDIgitalHoursToBerlinFiveHours(hours)
+				+ convertDIgitalHoursToBerlinSingleHours(hours) + convertDigitalMinutesToBerlinFiveMinutes(minutes)
+				+ convertDigitalMinutesToBerlinSigleMinutes(minutes);
+
+		if (result.contains("X")) {
+			return INVALID_STRING;
+		}
+
+		return result;
+	}
+
+	private boolean valid(String time) {
+		if (null == time || EMPTY_STRING.equalsIgnoreCase(time.trim()) || time.length() != 8) {
+			return false;
+		}
+		return true;
 	}
 }
