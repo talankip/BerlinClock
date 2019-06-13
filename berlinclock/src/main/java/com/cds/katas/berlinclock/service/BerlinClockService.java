@@ -10,4 +10,6 @@ public interface BerlinClockService {
 
 	public String ConvertDIgitalHoursToBerlinFiveHours(String hours);
 
+	public String ConvertDIgitalSecondsToBerlinSeconds(String seconds);
+
 }

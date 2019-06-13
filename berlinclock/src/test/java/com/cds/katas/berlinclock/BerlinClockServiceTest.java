@@ -276,4 +276,81 @@ public class BerlinClockServiceTest {
 		assertEquals("XXXX", service.ConvertDIgitalHoursToBerlinFiveHours(null));
 	}
 	
+	@Test
+	public void testConvertDIgitalSecondsToBerlinSecondsAllOns() {
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("00"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("02"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("04"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("06"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("08"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("10"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("12"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("14"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("16"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("18"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("20"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("22"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("24"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("26"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("28"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("30"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("32"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("34"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("36"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("38"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("40"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("42"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("44"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("46"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("48"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("50"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("52"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("54"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("56"));
+		assertEquals("Y", service.ConvertDIgitalSecondsToBerlinSeconds("58"));
+	}
+	
+	@Test
+	public void testConvertDIgitalSecondsToBerlinSecondsAllOffs() {
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("01"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("03"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("05"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("07"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("09"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("11"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("13"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("15"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("17"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("19"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("21"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("23"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("25"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("27"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("29"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("31"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("33"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("35"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("37"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("39"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("41"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("43"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("45"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("47"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("49"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("51"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("53"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("55"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("57"));
+		assertEquals("O", service.ConvertDIgitalSecondsToBerlinSeconds("59"));
+	}
+	
+	@Test
+	public void testConvertDIgitalSecondsToBerlinSecondsAllInvalids() {
+		assertEquals("XXXX", service.ConvertDIgitalSecondsToBerlinSeconds("60"));
+		assertEquals("XXXX", service.ConvertDIgitalSecondsToBerlinSeconds("61"));
+		assertEquals("XXXX", service.ConvertDIgitalSecondsToBerlinSeconds("asdsa"));
+		assertEquals("XXXX", service.ConvertDIgitalSecondsToBerlinSeconds(""));
+		assertEquals("XXXX", service.ConvertDIgitalSecondsToBerlinSeconds(null));
+	}
+	
 }

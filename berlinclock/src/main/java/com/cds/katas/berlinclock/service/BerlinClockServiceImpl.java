@@ -20,7 +20,7 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 					result = "YYOO";
 				} else if (3 == remainder) {
 					result = "YYYO";
-				}else if (4 == remainder) {
+				} else if (4 == remainder) {
 					result = "YYYY";
 				}
 				return result;
@@ -63,7 +63,7 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 					result = "YYRYYRYYRYO";
 				} else if (11 == quotient) {
 					result = "YYRYYRYYRYY";
-				} 
+				}
 				return result;
 			} else {
 				return INVALID_STRING;
@@ -90,7 +90,7 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 					result = "RRRO";
 				} else if (4 == remainder) {
 					result = "RRRR";
-				} 
+				}
 				return result;
 			} else {
 				return INVALID_STRING;
@@ -117,7 +117,28 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 					result = "RRRO";
 				} else if (4 == quotient) {
 					result = "RRRR";
-				} 
+				}
+				return result;
+			} else {
+				return INVALID_STRING;
+			}
+		} catch (Exception e) {
+			return INVALID_STRING;
+		}
+	}
+
+	public String ConvertDIgitalSecondsToBerlinSeconds(String seconds) {
+		try {
+			if (null != seconds && !EMPTY_STRING.equalsIgnoreCase(seconds.trim())) {
+				int second = Integer.valueOf(seconds);
+				if (second >= 60) {
+					return INVALID_STRING;
+				}
+				int remainder = Integer.remainderUnsigned(second, 2);
+				String result = "Y";
+				if (1 == remainder) {
+					result = "O";
+				}
 				return result;
 			} else {
 				return INVALID_STRING;
