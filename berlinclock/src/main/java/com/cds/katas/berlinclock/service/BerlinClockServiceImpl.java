@@ -13,16 +13,17 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 					return INVALID_STRING;
 				}
 				int remainder = Integer.remainderUnsigned(min, 5);
-				if (4 == remainder) {
-					return "YYYY";
-				} else if (1 == remainder) {
-					return "YOOO";
+				String result = "OOOO";
+				if (1 == remainder) {
+					result = "YOOO";
 				} else if (2 == remainder) {
-					return "YYOO";
+					result = "YYOO";
 				} else if (3 == remainder) {
-					return "YYYO";
+					result = "YYYO";
+				}else if (4 == remainder) {
+					result = "YYYY";
 				}
-				return "OOOO";
+				return result;
 			} else {
 				return INVALID_STRING;
 			}
