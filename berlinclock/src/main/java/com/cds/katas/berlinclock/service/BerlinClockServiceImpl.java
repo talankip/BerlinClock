@@ -71,4 +71,31 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 			return INVALID_STRING;
 		}
 	}
+
+	public String ConvertDIgitalHoursToBerlinSingleHours(String hours) {
+		try {
+			if (null != hours && !EMPTY_STRING.equalsIgnoreCase(hours.trim())) {
+				int hour = Integer.valueOf(hours);
+				if (hour >= 24) {
+					return INVALID_STRING;
+				}
+				int remainder = Integer.remainderUnsigned(hour, 5);
+				String result = "OOOO";
+				if (1 == remainder) {
+					result = "ROOO";
+				} else if (2 == remainder) {
+					result = "RROO";
+				} else if (3 == remainder) {
+					result = "RRRO";
+				} else if (4 == remainder) {
+					result = "RRRR";
+				} 
+				return result;
+			} else {
+				return INVALID_STRING;
+			}
+		} catch (Exception e) {
+			return INVALID_STRING;
+		}
+	}
 }
