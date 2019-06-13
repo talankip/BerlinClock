@@ -9,3 +9,11 @@ The final two rows represent the minutes. The upper row represents 5 minute bloc
 Implementing the kata using test driven development in Java
 
 Feature 1 -  Converting Digital Time to Berlin Time
+  1. Implement the Single Minutes Row
+  2. Implement the Five Minutes Row
+  3. Implement the Single Hours Row
+  4. Implement the Five Hours Row
+  5. Implement the Seconds Lamp
+  6. Integrate the Entire Berlin Clock
+  
+Feature 2 - Converting Berlin Time to Digital Time
