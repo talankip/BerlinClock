@@ -17,6 +17,7 @@ Feature 1 -  Converting Digital Time to Berlin Time
 Feature 2 - Converting Berlin Time to Digital Time
 This has a limitation of not converting to exact seconds. 
 
+Problem source - http://agilekatas.co.uk/katas/BerlinClock-Kata
 
 Implementing the kata using test driven development using Java and Junit.
 
