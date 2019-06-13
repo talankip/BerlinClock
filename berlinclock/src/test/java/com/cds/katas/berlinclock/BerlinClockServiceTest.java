@@ -18,34 +18,34 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinSigleMinutesForAllOff() {
+	public void testConvertDigitalMinutesToBerlinSigleMinutesForAllOff() {
 		assertEquals("OOOO", service.convertDigitalMinutesToBerlinSigleMinutes("00"));
 		assertEquals("OOOO", service.convertDigitalMinutesToBerlinSigleMinutes("35"));
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinSigleMinutesForAllYellow() {
+	public void testConvertDigitalMinutesToBerlinSigleMinutesForAllYellow() {
 		assertEquals("YYYY", service.convertDigitalMinutesToBerlinSigleMinutes("59"));
 		assertEquals("YYYY", service.convertDigitalMinutesToBerlinSigleMinutes("34"));
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinSigleMinutesForOneYellow() {
+	public void testConvertDigitalMinutesToBerlinSigleMinutesForOneYellow() {
 		assertEquals("YOOO", service.convertDigitalMinutesToBerlinSigleMinutes("41"));
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinSigleMinutesForTwoYellows() {
+	public void testConvertDigitalMinutesToBerlinSigleMinutesForTwoYellows() {
 		assertEquals("YYOO", service.convertDigitalMinutesToBerlinSigleMinutes("32"));
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinSigleMinutesForThreeYellows() {
+	public void testConvertDigitalMinutesToBerlinSigleMinutesForThreeYellows() {
 		assertEquals("YYYO", service.convertDigitalMinutesToBerlinSigleMinutes("23"));
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinSigleMinutesForAllInvalids() {
+	public void testConvertDigitalMinutesToBerlinSigleMinutesForAllInvalids() {
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinSigleMinutes("ab"));
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinSigleMinutes("60"));
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinSigleMinutes("61"));
@@ -54,7 +54,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesAllOff() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesAllOff() {
 		assertEquals("OOOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("00"));
 		assertEquals("OOOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("01"));
 		assertEquals("OOOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("02"));
@@ -63,7 +63,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithOneQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithOneQuotient() {
 		assertEquals("YOOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("05"));
 		assertEquals("YOOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("06"));
 		assertEquals("YOOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("07"));
@@ -72,7 +72,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithTwoQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithTwoQuotient() {
 		assertEquals("YYOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("10"));
 		assertEquals("YYOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("11"));
 		assertEquals("YYOOOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("12"));
@@ -81,7 +81,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithThreeQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithThreeQuotient() {
 		assertEquals("YYROOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("15"));
 		assertEquals("YYROOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("16"));
 		assertEquals("YYROOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("17"));
@@ -90,7 +90,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithFourQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithFourQuotient() {
 		assertEquals("YYRYOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("20"));
 		assertEquals("YYRYOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("21"));
 		assertEquals("YYRYOOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("22"));
@@ -99,7 +99,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithFiveQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithFiveQuotient() {
 		assertEquals("YYRYYOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("25"));
 		assertEquals("YYRYYOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("26"));
 		assertEquals("YYRYYOOOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("27"));
@@ -108,7 +108,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithSixQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithSixQuotient() {
 		assertEquals("YYRYYROOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("30"));
 		assertEquals("YYRYYROOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("31"));
 		assertEquals("YYRYYROOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("32"));
@@ -117,7 +117,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithSevenQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithSevenQuotient() {
 		assertEquals("YYRYYRYOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("35"));
 		assertEquals("YYRYYRYOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("36"));
 		assertEquals("YYRYYRYOOOO", service.convertDigitalMinutesToBerlinFiveMinutes("37"));
@@ -126,7 +126,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithEightQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithEightQuotient() {
 		assertEquals("YYRYYRYYOOO", service.convertDigitalMinutesToBerlinFiveMinutes("40"));
 		assertEquals("YYRYYRYYOOO", service.convertDigitalMinutesToBerlinFiveMinutes("41"));
 		assertEquals("YYRYYRYYOOO", service.convertDigitalMinutesToBerlinFiveMinutes("42"));
@@ -135,7 +135,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithNineQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithNineQuotient() {
 		assertEquals("YYRYYRYYROO", service.convertDigitalMinutesToBerlinFiveMinutes("45"));
 		assertEquals("YYRYYRYYROO", service.convertDigitalMinutesToBerlinFiveMinutes("46"));
 		assertEquals("YYRYYRYYROO", service.convertDigitalMinutesToBerlinFiveMinutes("47"));
@@ -144,7 +144,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithTenQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithTenQuotient() {
 		assertEquals("YYRYYRYYRYO", service.convertDigitalMinutesToBerlinFiveMinutes("50"));
 		assertEquals("YYRYYRYYRYO", service.convertDigitalMinutesToBerlinFiveMinutes("51"));
 		assertEquals("YYRYYRYYRYO", service.convertDigitalMinutesToBerlinFiveMinutes("52"));
@@ -153,7 +153,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesWithElevenQuotient() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesWithElevenQuotient() {
 		assertEquals("YYRYYRYYRYY", service.convertDigitalMinutesToBerlinFiveMinutes("55"));
 		assertEquals("YYRYYRYYRYY", service.convertDigitalMinutesToBerlinFiveMinutes("56"));
 		assertEquals("YYRYYRYYRYY", service.convertDigitalMinutesToBerlinFiveMinutes("57"));
@@ -162,7 +162,7 @@ public class BerlinClockServiceTest {
 	}
 
 	@Test
-	public void testconvertDigitalMinutesToBerlinFiveMinutesForAllInvalids() {
+	public void testConvertDigitalMinutesToBerlinFiveMinutesForAllInvalids() {
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinFiveMinutes("ab"));
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinFiveMinutes("60"));
 		assertEquals("XXXX", service.convertDigitalMinutesToBerlinFiveMinutes("61"));
@@ -171,7 +171,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinSingleHoursAllOffs() {
+	public void testConvertDIgitalHoursToBerlinSingleHoursAllOffs() {
 		assertEquals("OOOO", service.convertDIgitalHoursToBerlinSingleHours("00"));
 		assertEquals("OOOO", service.convertDIgitalHoursToBerlinSingleHours("05"));
 		assertEquals("OOOO", service.convertDIgitalHoursToBerlinSingleHours("10"));
@@ -180,7 +180,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinSingleHoursOneRed() {
+	public void testConvertDIgitalHoursToBerlinSingleHoursOneRed() {
 		assertEquals("ROOO", service.convertDIgitalHoursToBerlinSingleHours("01"));
 		assertEquals("ROOO", service.convertDIgitalHoursToBerlinSingleHours("06"));
 		assertEquals("ROOO", service.convertDIgitalHoursToBerlinSingleHours("11"));
@@ -189,7 +189,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinSingleHoursTwoReds() {
+	public void testConvertDIgitalHoursToBerlinSingleHoursTwoReds() {
 		assertEquals("RROO", service.convertDIgitalHoursToBerlinSingleHours("02"));
 		assertEquals("RROO", service.convertDIgitalHoursToBerlinSingleHours("07"));
 		assertEquals("RROO", service.convertDIgitalHoursToBerlinSingleHours("12"));
@@ -198,7 +198,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinSingleHoursThreeReds() {
+	public void testConvertDIgitalHoursToBerlinSingleHoursThreeReds() {
 		assertEquals("RRRO", service.convertDIgitalHoursToBerlinSingleHours("03"));
 		assertEquals("RRRO", service.convertDIgitalHoursToBerlinSingleHours("08"));
 		assertEquals("RRRO", service.convertDIgitalHoursToBerlinSingleHours("13"));
@@ -207,7 +207,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinSingleHoursFourReds() {
+	public void testConvertDIgitalHoursToBerlinSingleHoursFourReds() {
 		assertEquals("RRRR", service.convertDIgitalHoursToBerlinSingleHours("04"));
 		assertEquals("RRRR", service.convertDIgitalHoursToBerlinSingleHours("09"));
 		assertEquals("RRRR", service.convertDIgitalHoursToBerlinSingleHours("14"));
@@ -215,7 +215,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinSingleHoursInvalids() {
+	public void testConvertDIgitalHoursToBerlinSingleHoursInvalids() {
 		assertEquals("XXXX", service.convertDIgitalHoursToBerlinSingleHours("24"));
 		assertEquals("XXXX", service.convertDIgitalHoursToBerlinSingleHours("25"));
 		assertEquals("XXXX", service.convertDIgitalHoursToBerlinSingleHours("sfsd"));
@@ -224,7 +224,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinFiveHoursAllOffs() {
+	public void testConvertDIgitalHoursToBerlinFiveHoursAllOffs() {
 		assertEquals("OOOO", service.convertDIgitalHoursToBerlinFiveHours("00"));
 		assertEquals("OOOO", service.convertDIgitalHoursToBerlinFiveHours("01"));
 		assertEquals("OOOO", service.convertDIgitalHoursToBerlinFiveHours("02"));
@@ -233,7 +233,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinFiveHoursOneRed() {
+	public void testConvertDIgitalHoursToBerlinFiveHoursOneRed() {
 		assertEquals("ROOO", service.convertDIgitalHoursToBerlinFiveHours("05"));
 		assertEquals("ROOO", service.convertDIgitalHoursToBerlinFiveHours("06"));
 		assertEquals("ROOO", service.convertDIgitalHoursToBerlinFiveHours("07"));
@@ -242,7 +242,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinFiveHoursTwoReds() {
+	public void testConvertDIgitalHoursToBerlinFiveHoursTwoReds() {
 		assertEquals("RROO", service.convertDIgitalHoursToBerlinFiveHours("10"));
 		assertEquals("RROO", service.convertDIgitalHoursToBerlinFiveHours("11"));
 		assertEquals("RROO", service.convertDIgitalHoursToBerlinFiveHours("12"));
@@ -251,7 +251,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinFiveHoursThreeReds() {
+	public void testConvertDIgitalHoursToBerlinFiveHoursThreeReds() {
 		assertEquals("RRRO", service.convertDIgitalHoursToBerlinFiveHours("15"));
 		assertEquals("RRRO", service.convertDIgitalHoursToBerlinFiveHours("16"));
 		assertEquals("RRRO", service.convertDIgitalHoursToBerlinFiveHours("17"));
@@ -260,7 +260,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinFiveHoursFourReds() {
+	public void testConvertDIgitalHoursToBerlinFiveHoursFourReds() {
 		assertEquals("RRRR", service.convertDIgitalHoursToBerlinFiveHours("20"));
 		assertEquals("RRRR", service.convertDIgitalHoursToBerlinFiveHours("21"));
 		assertEquals("RRRR", service.convertDIgitalHoursToBerlinFiveHours("22"));
@@ -268,7 +268,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalHoursToBerlinFiveHoursInvalids() {
+	public void testConvertDIgitalHoursToBerlinFiveHoursInvalids() {
 		assertEquals("XXXX", service.convertDIgitalHoursToBerlinFiveHours("24"));
 		assertEquals("XXXX", service.convertDIgitalHoursToBerlinFiveHours("25"));
 		assertEquals("XXXX", service.convertDIgitalHoursToBerlinFiveHours("sfsd"));
@@ -277,7 +277,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalSecondsToBerlinSecondsAllOns() {
+	public void testConvertDIgitalSecondsToBerlinSecondsAllOns() {
 		assertEquals("Y", service.convertDIgitalSecondsToBerlinSeconds("00"));
 		assertEquals("Y", service.convertDIgitalSecondsToBerlinSeconds("02"));
 		assertEquals("Y", service.convertDIgitalSecondsToBerlinSeconds("04"));
@@ -311,7 +311,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalSecondsToBerlinSecondsAllOffs() {
+	public void testConvertDIgitalSecondsToBerlinSecondsAllOffs() {
 		assertEquals("O", service.convertDIgitalSecondsToBerlinSeconds("01"));
 		assertEquals("O", service.convertDIgitalSecondsToBerlinSeconds("03"));
 		assertEquals("O", service.convertDIgitalSecondsToBerlinSeconds("05"));
@@ -345,7 +345,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDIgitalSecondsToBerlinSecondsAllInvalids() {
+	public void testConvertDIgitalSecondsToBerlinSecondsAllInvalids() {
 		assertEquals("XXXX", service.convertDIgitalSecondsToBerlinSeconds("60"));
 		assertEquals("XXXX", service.convertDIgitalSecondsToBerlinSeconds("61"));
 		assertEquals("XXXX", service.convertDIgitalSecondsToBerlinSeconds("asdsa"));
@@ -354,7 +354,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDigitalTimeToBerlinTime() {
+	public void testConvertDigitalTimeToBerlinTime() {
 		assertEquals("YOOOOOOOOOOOOOOOOOOOOOOO", service.convertDigitalTimeToBerlinTime("00:00:00"));
 		assertEquals("ORRRRRRROYYRYYRYYRYYYYYY", service.convertDigitalTimeToBerlinTime("23:59:59"));
 		assertEquals("YRRROROOOYYRYYRYYRYOOOOO", service.convertDigitalTimeToBerlinTime("16:50:06"));
@@ -362,7 +362,7 @@ public class BerlinClockServiceTest {
 	}
 	
 	@Test
-	public void testconvertDigitalTimeToBerlinTimeInvalids() {
+	public void testConvertDigitalTimeToBerlinTimeInvalids() {
 		assertEquals("XXXX", service.convertDigitalTimeToBerlinTime("a0:00:00"));
 		assertEquals("XXXX", service.convertDigitalTimeToBerlinTime("23:a9:59"));
 		assertEquals("XXXX", service.convertDigitalTimeToBerlinTime("16:50:a6"));
@@ -381,6 +381,22 @@ public class BerlinClockServiceTest {
 		assertEquals("XXXX", service.convertDigitalTimeToBerlinTime("25:00:00"));
 		assertEquals("XXXX", service.convertDigitalTimeToBerlinTime("23:61:59"));
 		assertEquals("XXXX", service.convertDigitalTimeToBerlinTime("16:50:61"));
+	}
+	
+	@Test
+	public void testConvertBerlinTimeToDigitalTime() {
+		assertEquals("00:00:00", service.convertBerlinTimeToDigitalTime("YOOOOOOOOOOOOOOOOOOOOOOO"));
+		assertEquals("11:37:01", service.convertBerlinTimeToDigitalTime("ORROOROOOYYRYYRYOOOOYYOO"));
+		assertEquals("16:50:00", service.convertBerlinTimeToDigitalTime("YRRROROOOYYRYYRYYRYOOOOO"));
+		assertEquals("23:59:01", service.convertBerlinTimeToDigitalTime("ORRRRRRROYYRYYRYYRYYYYYY"));
+	}
+	
+	@Test
+	public void testConvertBerlinTimeToDigitalTimeInvalids() {
+		assertEquals("XXXX", service.convertBerlinTimeToDigitalTime("OOOOOOOOOOOOOOOOOOOOOOO"));
+		assertEquals("XXXX", service.convertBerlinTimeToDigitalTime("1RRRRRRROYYRYYRYYRYYYYYY"));
+		assertEquals("XXXX", service.convertBerlinTimeToDigitalTime("YRRROROOOYYRYYRYYRYOOOOOY"));
+		assertEquals("XXXX", service.convertBerlinTimeToDigitalTime("ORROOROOOYYRYYRYOOOOYYON"));
 	}
 	
 }

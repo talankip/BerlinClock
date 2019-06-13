@@ -162,7 +162,7 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 		}
 		String hours = time.substring(0, 2);
 		String minutes = time.substring(3, 5);
-		String seconds = time.substring(6, 8);
+		String seconds = time.substring(6);
 
 		result = convertDIgitalSecondsToBerlinSeconds(seconds) + convertDIgitalHoursToBerlinFiveHours(hours)
 				+ convertDIgitalHoursToBerlinSingleHours(hours) + convertDigitalMinutesToBerlinFiveMinutes(minutes)
@@ -175,22 +175,65 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 		return result;
 	}
 
+	public String convertBerlinTimeToDigitalTime(String time) {
+		if (null == time || EMPTY_STRING.equalsIgnoreCase(time.trim()) || time.length() != 24
+				|| !time.matches("[ORY]*")) {
+			return INVALID_STRING;
+		}
+
+		String seconds = time.substring(0, 1);
+		String fiveHours = time.substring(1, 5);
+		String singleHours = time.substring(5, 9);
+		String fiveMinutes = time.substring(9, 20);
+		String singleMinutes = time.substring(20);
+
+		//TODO  Not sure how to get the exact seconds from this
+		String digitalSeconds = "00"; 
+		if ("O".equalsIgnoreCase(seconds)) {
+			digitalSeconds = "01";
+		}
+
+		long fiveHoursCount = fiveHours.chars().filter(red -> red == 'R').count();
+		long singleHoursCount = singleHours.chars().filter(red -> red == 'R').count();
+		long totalHours = fiveHoursCount * 5 + singleHoursCount;
+		String digitalHours = "";
+		if (totalHours < 10) {
+			digitalHours = "0" + totalHours;
+		} else {
+			digitalHours = digitalHours + totalHours;
+		}
+
+		long fiveMinutesCount = fiveMinutes.chars().filter(red -> red == 'R').count() + fiveMinutes.chars().filter(red -> red == 'Y').count();
+		long singleMinutesCount = singleMinutes.chars().filter(red -> red == 'R').count() + singleMinutes.chars().filter(red -> red ==  'Y').count();
+		long totalMinutes = fiveMinutesCount * 5 + singleMinutesCount;
+		String digitalMinutes = "";
+		if (totalMinutes < 10) {
+			digitalMinutes = "0" + totalMinutes;
+		} else {
+			digitalMinutes = digitalMinutes + totalMinutes;
+		}
+
+		
+		return digitalHours+":"+digitalMinutes+":"+digitalSeconds;
+	}
+
 	private boolean valid(String time) {
 		if (null == time || EMPTY_STRING.equalsIgnoreCase(time.trim()) || time.length() != 8) {
 			return false;
 		}
 		return true;
 	}
-	
+
 	private boolean invalidSecondsOrMinutes(int min) {
 		return min >= 60;
 	}
-	
+
 	private boolean validString(String seconds) {
 		return null != seconds && !EMPTY_STRING.equalsIgnoreCase(seconds.trim());
 	}
-	
+
 	private boolean invalidHour(int hour) {
 		return hour >= 24;
 	}
+
 }

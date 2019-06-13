@@ -14,4 +14,6 @@ public interface BerlinClockService {
 
 	public String convertDigitalTimeToBerlinTime(String time);
 
+	public String convertBerlinTimeToDigitalTime(String time);
+
 }
