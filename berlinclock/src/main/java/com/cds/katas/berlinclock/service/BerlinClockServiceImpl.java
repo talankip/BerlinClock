@@ -7,9 +7,9 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 
 	public String convertDigitalMinutesToBerlinSigleMinutes(String minutes) {
 		try {
-			if (null != minutes && !EMPTY_STRING.equalsIgnoreCase(minutes.trim())) {
+			if (validString(minutes)) {
 				int min = Integer.valueOf(minutes);
-				if (min >= 60) {
+				if (invalidSecondsOrMinutes(min)) {
 					return INVALID_STRING;
 				}
 				int remainder = Integer.remainderUnsigned(min, 5);
@@ -34,9 +34,9 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 
 	public String convertDigitalMinutesToBerlinFiveMinutes(String minutes) {
 		try {
-			if (null != minutes && !EMPTY_STRING.equalsIgnoreCase(minutes.trim())) {
+			if (validString(minutes)) {
 				int min = Integer.valueOf(minutes);
-				if (min >= 60) {
+				if (invalidSecondsOrMinutes(min)) {
 					return INVALID_STRING;
 				}
 				int quotient = Integer.divideUnsigned(min, 5);
@@ -75,9 +75,9 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 
 	public String convertDIgitalHoursToBerlinSingleHours(String hours) {
 		try {
-			if (null != hours && !EMPTY_STRING.equalsIgnoreCase(hours.trim())) {
+			if (validString(hours)) {
 				int hour = Integer.valueOf(hours);
-				if (hour >= 24) {
+				if (invalidHour(hour)) {
 					return INVALID_STRING;
 				}
 				int remainder = Integer.remainderUnsigned(hour, 5);
@@ -102,9 +102,9 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 
 	public String convertDIgitalHoursToBerlinFiveHours(String hours) {
 		try {
-			if (null != hours && !EMPTY_STRING.equalsIgnoreCase(hours.trim())) {
+			if (validString(hours)) {
 				int hour = Integer.valueOf(hours);
-				if (hour >= 24) {
+				if (invalidHour(hour)) {
 					return INVALID_STRING;
 				}
 				int quotient = Integer.divideUnsigned(hour, 5);
@@ -129,9 +129,9 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 
 	public String convertDIgitalSecondsToBerlinSeconds(String seconds) {
 		try {
-			if (null != seconds && !EMPTY_STRING.equalsIgnoreCase(seconds.trim())) {
+			if (validString(seconds)) {
 				int second = Integer.valueOf(seconds);
-				if (second >= 60) {
+				if (invalidSecondsOrMinutes(second)) {
 					return INVALID_STRING;
 				}
 				int remainder = Integer.remainderUnsigned(second, 2);
@@ -180,5 +180,17 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 			return false;
 		}
 		return true;
+	}
+	
+	private boolean invalidSecondsOrMinutes(int min) {
+		return min >= 60;
+	}
+	
+	private boolean validString(String seconds) {
+		return null != seconds && !EMPTY_STRING.equalsIgnoreCase(seconds.trim());
+	}
+	
+	private boolean invalidHour(int hour) {
+		return hour >= 24;
 	}
 }
