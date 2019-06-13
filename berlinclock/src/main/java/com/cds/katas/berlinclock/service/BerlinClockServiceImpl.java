@@ -203,8 +203,8 @@ public class BerlinClockServiceImpl implements BerlinClockService {
 			digitalHours = digitalHours + totalHours;
 		}
 
-		long fiveMinutesCount = fiveMinutes.chars().filter(red -> red == 'R').count() + fiveMinutes.chars().filter(red -> red == 'Y').count();
-		long singleMinutesCount = singleMinutes.chars().filter(red -> red == 'R').count() + singleMinutes.chars().filter(red -> red ==  'Y').count();
+		long fiveMinutesCount = fiveMinutes.chars().filter(red -> (red == 'R' || red == 'Y')).count();
+		long singleMinutesCount = singleMinutes.chars().filter(red -> red == 'Y').count();
 		long totalMinutes = fiveMinutesCount * 5 + singleMinutesCount;
 		String digitalMinutes = "";
 		if (totalMinutes < 10) {
