@@ -19,5 +19,5 @@ This has a limitation of not converting to exact seconds.
 
 Problem source - http://agilekatas.co.uk/katas/BerlinClock-Kata
 
-Implementing the kata using test driven development using Java and Junit.
+Implementing the solution by practicing test driven development using Java and Junit.
 
